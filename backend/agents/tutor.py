@@ -1,4 +1,5 @@
 from google.adk.agents import Agent
+from backend.utils.pdf_tool import read_pdf
 
 root_agent = Agent(
     name="tutor_agent",
@@ -13,5 +14,6 @@ Your responsibilities:
 - Give practical examples.
 - Encourage the student.
 - End with a short recap.
-"""
+""",
+    tools=[read_pdf],
 )

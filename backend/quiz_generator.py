@@ -8,20 +8,18 @@ client = genai.Client(
     api_key=os.getenv("GEMINI_API_KEY")
 )
 
-def generate_study_plan(text):
+def generate_quiz(text):
 
     prompt = f"""
-You are StudyBuddy AI's Study Planner.
+You are StudyBuddy AI.
 
-Create a personalized 7-day study plan from the study material below.
+Create a quiz from the study material below.
 
 Requirements:
-- Divide the content across 7 days.
-- Include realistic daily goals.
-- Include short breaks.
-- Include revision sessions.
-- End with a final revision and self-test.
-- Format the response clearly.
+- Generate exactly 10 multiple-choice questions.
+- Each question must have 4 options (A, B, C, D).
+- Clearly indicate the correct answer.
+- Cover different parts of the material.
 
 Study Material:
 
